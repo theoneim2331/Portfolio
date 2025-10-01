@@ -1,0 +1,548 @@
+/* ================================== */
+/* General Styling           */
+/* ================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: black;
+    color: #f9d401;
+}
+
+a {
+    transition: all 300ms ease;
+    text-decoration: none;
+}
+
+section {
+    padding: 60px 40px;
+    min-height: fit-content;
+    height: auto;
+}
+
+.title {
+    line-height: 1.2;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section__text__p3 {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+
+/* ================================== */
+/* Navbar Styling            */
+/* ================================== */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 20px;
+    background-color: #f9d401;
+}
+
+.navbar-con {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    height: 70px;
+    width: 70px;
+    background-image: url(logo.png);
+    background-size: cover;
+    border-radius: 50%;
+}
+
+.options ul {
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+}
+
+.options li {
+    display: inline-block;
+}
+
+.options a {
+    color: black;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, border 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.options a:hover {
+    background-color: #ffa618;
+    border: 2px solid black;
+}
+
+
+/* ================================== */
+/* Profile/Hero Section        */
+/* ================================== */
+
+#profile {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    min-height: 90vh;
+}
+
+.img-sec {
+    background-image: url('Screenshot 2025-01-28 193056.png');
+    background-size: cover;
+    height: 380px;
+    width: 380px;
+    border-radius: 50%;
+}
+
+.section__text {
+    text-align: center;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.section__text__p1 {
+    font-size: 2.5rem;
+    animation: slide-in 1s ease-out;
+}
+
+.title.main-title {
+    font-size: 4rem;
+    animation: slide-in 2s ease-out;
+}
+
+.section__text__p2 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    animation: slide-in 3s ease-out;
+}
+
+#socials-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+.icon {
+    cursor: pointer;
+    height: 2rem;
+    border-radius: 4px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn {
+    font-weight: 600;
+    transition: all 300ms ease;
+    padding: 1rem;
+    width: 10rem;
+    border-radius: 2rem;
+    text-align: center;
+}
+
+.btn-color-1 {
+    border: rgb(255, 128, 0) 0.1rem solid;
+    background: rgb(52, 50, 45);
+    color: rgb(253, 148, 0);
+}
+
+.btn-color-1:hover {
+    cursor: pointer;
+    background: rgb(0, 0, 0);
+    color: #ffc107;
+}
+
+
+/* ================================== */
+/* About Section            */
+/* ================================== */
+
+.section-con {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-pic {
+    height: 350px;
+    width: 300px;
+    border: 4px solid #f9d401;
+    border-radius: 2rem;
+    object-fit: cover;
+}
+
+.about-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 700px;
+}
+
+.about-con {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.details1, .details2 {
+    border: 1px solid #f9d401;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.icon-head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.heading {
+    text-decoration: underline;
+}
+
+.exp-icon, .edu-icon {
+    height: 25px;
+    width: 25px;
+}
+
+/* ================================== */
+/* Experience Section         */
+/* ================================== */
+
+.exp {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3rem;
+    flex-wrap: wrap;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.text-con, .description {
+    border: 1.5px solid #f9d401;
+    padding: 20px;
+    border-radius: 8px;
+    line-height: 1.6;
+}
+
+.sub-title {
+    font-size: 1.75rem;
+    margin-bottom: 20px;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.text-con {
+    font-size: 1.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    flex-basis: 400px;
+    flex-grow: 1;
+}
+
+.check-icon {
+    height: 25px;
+    width: 25px;
+}
+
+.description {
+    flex-basis: 600px;
+    flex-grow: 2;
+}
+
+
+/* ================================== */
+/* Projects Section          */
+/* ================================== */
+
+.pro-con {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.text-con2 {
+    border: 1.5px solid #f9d401;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    width: 320px;
+    border-radius: 15px;
+}
+
+.proImg {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.sub-title2 {
+    width: 100%;
+    text-decoration: underline;
+    padding-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+
+/* ================================== */
+/* Skills Section           */
+/* ================================== */
+
+.skills-layout-container {
+    display: flex;
+    align-items: flex-start; /* Aligns columns to the top */
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.left-column {
+    flex: 1; /* Takes up 1 part of the space */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Space between skills and languages boxes */
+}
+
+.skills-container, .cp-skill, .languages {
+    border: 2px solid #ffc107;
+    border-radius: 25px;
+    padding: 2rem;
+}
+
+.cp-skill {
+    flex: 1; /* Takes up 2 parts of the space, making it wider */
+}
+
+.skills-container h3, .cp-skill h3 {
+    text-align: center;
+    font-size: 1.75rem;
+    margin-bottom: 30px;
+    text-decoration: underline;
+}
+
+.skill1 h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.progress-bar {
+    background-color: #ddd;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.progress {
+    background-color: #ffc107;
+    height: 20px;
+    line-height: 20px;
+    color: black;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.cp-platforms {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem; /* Adjusted gap */
+}
+
+.platform {
+    border: 2px solid #ffc107;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    padding: 1rem; /* Adjusted padding */
+    width: 220px; /* Adjusted width */
+    text-align: center;
+}
+
+.platform a { color: #f6df5c; }
+.platform img { width: 50px; height: 50px; margin-bottom: 10px; }
+
+.languages h4 {
+    font-size: 1.5rem;
+    text-decoration: underline;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.languages ul {
+    list-style: none;
+    padding: 0;
+    display: inline-block;
+    text-align: left;
+    width: 100%; /* Make it fill the centered container */
+}
+
+.profilelink { text-decoration: none; color: #ffc107; font-weight: bold; }
+
+
+/* ================================== */
+/* Contact & Footer           */
+/* ================================== */
+
+.contact-section { padding: 50px 20px; text-align: center; }
+.contact-form { max-width: 500px; margin: 0 auto 30px; }
+
+.contact-form input,
+.contact-form textarea {
+    background-color: #f4e48c;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 3px solid #e9701a;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.contact-form button {
+    padding: 15px 30px;
+    background-color: #ffcc00;
+    color: #333;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover { background-color: #e6b800; }
+.contact-info { font-size: 1.1rem; color: #f4b944; }
+.social-links a { display: inline-block; margin: 10px 15px; color: #e7ee7f; font-weight: bold; transition: color 0.3s ease; }
+.social-links a:hover { color: #ffcc00; }
+footer { color: #f1cc82; padding: 40px 20px; text-align: center; }
+
+
+/* ====================================================================== */
+/* RESPONSIVE DESIGN (Media Queries)                */
+/* ====================================================================== */
+
+@media (max-width: 1024px) {
+    .title, .title.main-title { font-size: 2.5rem; }
+    .section__text__p1 { font-size: 2rem; }
+    .section__text__p2 { font-size: 1.5rem; }
+    
+    #profile, .section-con {
+        justify-content: center;
+    }
+
+    .exp {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-con, .description {
+        width: 100%;
+        max-width: 600px;
+        flex-basis: auto;
+    }
+
+    /* Stack the columns on tablets */
+    .skills-layout-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .left-column, .cp-skill {
+        width: 100%;
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-con { flex-direction: column; gap: 15px; }
+    .options ul { flex-wrap: wrap; justify-content: center; gap: 10px; }
+    section { padding: 40px 15px; }
+    
+    #profile, .section-con {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .img-sec { width: 280px; height: 280px; margin-bottom: 20px; }
+    .about-pic { width: 250px; height: 300px; }
+    .title, .title.main-title { font-size: 2.2rem; }
+    .section__text__p1 { font-size: 1.8rem; }
+    .section__text__p2 { font-size: 1.2rem; }
+}
+/* --- NEW: Styles for Animate on Scroll --- */
+
+/* This is the initial state of the animated elements (before they appear) */
+.hidden {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 1s ease-out;
+}
+
+/* This is the final state when the element becomes visible */
+.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Optional: Add different delays for a staggered effect */
+.delay-1 {
+  transition-delay: 200ms;
+}
+.delay-2 {
+  transition-delay: 400ms;
+}
