@@ -56,3 +56,51 @@ const hiddenElements = document.querySelectorAll(".hidden");
 
 // Tell the observer to observe each hidden element
 hiddenElements.forEach((el) => observer.observe(el));
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    // --- Your existing Intersection Observer code for animations ---
+    const hiddenElements = document.querySelectorAll('.hidden');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }
+        });
+    }, {
+        threshold: 0.1 
+    });
+    hiddenElements.forEach(el => observer.observe(el));
+    
+    // --- NEW: Hamburger Menu Logic ---
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const navLinks = document.getElementById('nav-links');
+    const navMenuLinks = navLinks.querySelectorAll('a');
+
+    // Toggle the menu when the hamburger is clicked
+    hamburgerBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        
+        // Bonus: Change icon from bars to an X and back
+        const icon = hamburgerBtn.querySelector('i');
+        if (navLinks.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-xmark');
+        } else {
+            icon.classList.remove('fa-xmark');
+            icon.classList.add('fa-bars');
+        }
+    });
+
+    // Bonus: Close the menu when a link is clicked
+    navMenuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                hamburgerBtn.querySelector('i').classList.remove('fa-xmark');
+                hamburgerBtn.querySelector('i').classList.add('fa-bars');
+            }
+        });
+    });
+});
