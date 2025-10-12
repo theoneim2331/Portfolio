@@ -177,7 +177,7 @@ section {
     text-align: center;
 }
 
-.btn-color-1 {
+.btn-color-1{
     border: rgb(255, 128, 0) 0.1rem solid;
     background: rgb(52, 50, 45);
     color: rgb(253, 148, 0);
@@ -189,7 +189,31 @@ section {
     color: #ffc107;
 }
 
+.btn-icon {
+    font-weight: 600;
+    width: 10rem; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    padding: 1rem; 
+    transition: all 300ms ease;
+    border-radius: 2rem;
+}
 
+/* Style the icon itself to make it larger */
+.btn-icon i {
+    font-size: 1.5rem;
+}
+.btn-color-2{
+     border: rgb(255, 128, 0) 0.1rem solid;
+    background: rgb(52, 50, 45);
+    color: rgb(253, 148, 0);
+}
+.btn-color-2:hover {
+    cursor: pointer;
+    background: rgb(0, 0, 0);
+    color: #ffc107;
+}
 /* ================================== */
 /* About Section            */
 /* ================================== */
@@ -545,4 +569,56 @@ footer { color: #f1cc82; padding: 40px 20px; text-align: center; }
 }
 .delay-2 {
   transition-delay: 400ms;
+}
+
+/* ================================== */
+/* Hamburger Menu Styling             */
+/* ================================== */
+
+/* Style the hamburger button */
+.hamburger-btn {
+  display: none; /* Hidden by default on desktop */
+  background: none;
+  border: none;
+  color: black;
+  font-size: 1.75rem;
+  cursor: pointer;
+  z-index: 1100; /* Ensure it's above other elements */
+}
+
+/* We will use JavaScript to add an 'active' class to the menu */
+.options.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 90px; /* Position it right below the navbar */
+  left: 0;
+  width: 100%;
+  background-color: #f9d401; /* Match navbar color */
+  padding: 1rem 0;
+  border-top: 2px solid black;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.options.active .nav-links {
+  flex-direction: column;
+  gap: 1.5rem; /* Add more space between links on mobile */
+}
+
+/* Now, inside your existing media query for mobile */
+@media (max-width: 768px) {
+  .navbar-con { 
+    flex-direction: row; /* Keep logo and hamburger on one line */
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .options {
+    display: none; /* Hide the desktop nav links */
+  }
+
+  .hamburger-btn {
+    display: block; /* Show the hamburger button */
+  }
 }
