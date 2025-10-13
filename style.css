@@ -61,6 +61,7 @@ section {
     align-items: center;
     max-width: 1300px;
     margin: 0 auto;
+    position: relative;
 }
 
 .logo {
@@ -96,7 +97,14 @@ section {
     border: 2px solid black;
 }
 
-
+.hamburger-btn {
+    display: none; /* This is the key line */
+    background: none;
+    border: none;
+    color: black;
+    font-size: 1.75rem;
+    cursor: pointer;
+}
 /* ================================== */
 /* Profile/Hero Section        */
 /* ================================== */
@@ -532,10 +540,44 @@ footer { color: #f1cc82; padding: 40px 20px; text-align: center; }
     }
 }
 
+
+/* ================================== */
+/* Hamburger Menu Styling             */
+/* ================================== */
+
+/* This rule styles the active dropdown menu when it's open */
+.options.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem; /* Space between links */
+
+    /* Positioning and appearance */
+    position: absolute;
+    top: 90px; /* Position it just below the navbar */
+    left: 0;
+    width: 100%;
+    background-color: #f9d401;
+    padding: 1.5rem 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* This targets the <ul> inside the open menu to stack the links vertically */
+.options.active ul {
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+
+/* ================================================= */
+/* RESPONSIVE STYLES FOR MOBILE (768px and below)    */
+/* ================================================= */
+
 @media (max-width: 768px) {
-    .navbar-con { flex-direction: column; gap: 15px; }
-    .options ul { flex-wrap: wrap; justify-content: center; gap: 10px; }
-    section { padding: 40px 15px; }
+    /* --- General Layout --- */
+    section { 
+        padding: 40px 15px; 
+    }
     
     #profile, .section-con {
         flex-direction: column;
@@ -547,78 +589,20 @@ footer { color: #f1cc82; padding: 40px 20px; text-align: center; }
     .title, .title.main-title { font-size: 2.2rem; }
     .section__text__p1 { font-size: 1.8rem; }
     .section__text__p2 { font-size: 1.2rem; }
-}
-/* --- NEW: Styles for Animate on Scroll --- */
 
-/* This is the initial state of the animated elements (before they appear) */
-.hidden {
-  opacity: 0;
-  transform: translateX(-100%);
-  transition: all 1s ease-out;
-}
+    /* --- Navbar & Hamburger Menu --- */
+    .navbar-con { 
+        flex-direction: row; /* Keeps logo and hamburger on one line */
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
 
-/* This is the final state when the element becomes visible */
-.show {
-  opacity: 1;
-  transform: translateX(0);
-}
+    .options {
+        display: none; /* Hide the desktop nav links by default */
+    }
 
-/* Optional: Add different delays for a staggered effect */
-.delay-1 {
-  transition-delay: 200ms;
-}
-.delay-2 {
-  transition-delay: 400ms;
-}
-
-/* ================================== */
-/* Hamburger Menu Styling             */
-/* ================================== */
-
-/* Style the hamburger button */
-.hamburger-btn {
-  display: none; /* Hidden by default on desktop */
-  background: none;
-  border: none;
-  color: black;
-  font-size: 1.75rem;
-  cursor: pointer;
-  z-index: 1100; /* Ensure it's above other elements */
-}
-
-/* We will use JavaScript to add an 'active' class to the menu */
-.options.active {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  top: 90px; /* Position it right below the navbar */
-  left: 0;
-  width: 100%;
-  background-color: #f9d401; /* Match navbar color */
-  padding: 1rem 0;
-  border-top: 2px solid black;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-.options.active .nav-links {
-  flex-direction: column;
-  gap: 1.5rem; /* Add more space between links on mobile */
-}
-
-/* Now, inside your existing media query for mobile */
-@media (max-width: 768px) {
-  .navbar-con { 
-    flex-direction: row; /* Keep logo and hamburger on one line */
-    justify-content: space-between;
-    width: 100%;
-  }
-
-  .options {
-    display: none; /* Hide the desktop nav links */
-  }
-
-  .hamburger-btn {
-    display: block; /* Show the hamburger button */
-  }
+    .hamburger-btn {
+        display: block; /* Show the hamburger button */
+    }
 }
