@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // --- NEW: Hamburger Menu Logic ---
     const hamburgerBtn = document.getElementById('hamburger-btn');
-    const navLinks = document.getElementById('nav-links');
+    const navLinks = document.querySelector('.nav-links');
     const navMenuLinks = navLinks.querySelectorAll('a');
 
     // Toggle the menu when the hamburger is clicked
@@ -104,3 +104,4 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
